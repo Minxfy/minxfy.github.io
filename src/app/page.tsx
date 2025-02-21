@@ -47,7 +47,7 @@ export default function Home() {
       icon: <FaRocket className="w-8 h-8" />,
       description: (
         <span className="block md:inline">
-          Free, Fast & User-friendly Online File Converter!
+          Free & Fast Online File Converter!
         </span>
       ),
     },
