@@ -1,3 +1,3 @@
 # Official CosmoCrafters Website
 
-### http://cosmocrafters.github.io/
+### https://cosmocrafters.netlify.app/
