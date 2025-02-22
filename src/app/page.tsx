@@ -110,9 +110,10 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              We are a group of recent graduates studying software engineering.
-              Currently, we are building web applications and tools mainly to
-              improve your productivity and workflow to make your life easier.
+              We are a group of recent software engineering graduates who are
+              interested in the AI & technology fields. Currently, we are
+              building web applications and tools mainly to enhance your
+              productivity and streamline workflows, making your life easier.
             </motion.p>
           </div>
 
