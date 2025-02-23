@@ -74,13 +74,13 @@ export default function Home() {
       {/* Theme Toggle Button */}
       <Button
         onClick={toggleTheme}
-        className="fixed top-4 right-4 md:top-6 md:right-6 p-2 md:p-3 lg:p-4 rounded-full bg-white/50 dark:bg-black/50 backdrop-blur-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+        className="fixed top-4 right-4 p-2 rounded-full bg-white/50 dark:bg-black/50 backdrop-blur-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
         aria-label="Toggle Theme"
       >
         {isDarkMode ? (
-          <FaSun className="w-6 h-6 text-yellow-500" />
+          <FaSun className="w-5 h-5 text-yellow-500" />
         ) : (
-          <FaMoon className="w-6 h-6 text-gray-700" />
+          <FaMoon className="w-5 h-5 text-gray-700" />
         )}
       </Button>
 
