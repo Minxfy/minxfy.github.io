@@ -78,9 +78,9 @@ export default function Home() {
         aria-label="Toggle Theme"
       >
         {isDarkMode ? (
-          <FaSun className="w-6 h-6 text-yellow-500" />
+          <FaSun className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" />
         ) : (
-          <FaMoon className="w-6 h-6 text-gray-700" />
+          <FaMoon className="w-5 h-5 md:w-6 md:h-6 text-gray-700" />
         )}
       </Button>
 
