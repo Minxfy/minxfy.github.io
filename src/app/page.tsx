@@ -113,7 +113,8 @@ export default function Home() {
               We are a group of recent software engineering graduates who are
               interested in the AI & technology fields. Currently, we are
               building web applications and tools mainly to enhance your
-              productivity and streamline workflows, making your life easier.
+              productivity and streamline your workflows, making your life
+              easier.
             </motion.p>
           </div>
 
