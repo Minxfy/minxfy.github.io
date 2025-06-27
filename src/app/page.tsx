@@ -1,172 +1,137 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import {
-  FaTwitter,
-  FaEnvelope,
-  FaExternalLinkAlt,
-  FaRocket,
-  FaMoon,
-  FaSun,
-} from "react-icons/fa";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { useState, useEffect } from "react"; // Import useEffect
+import { motion } from "framer-motion"
+import { FaTwitter, FaEnvelope, FaExternalLinkAlt, FaRocket } from "react-icons/fa"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(false); // State for theme mode
-
-  // Sync theme state with localStorage and system preferences
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    if (savedTheme === "dark" || (!savedTheme && prefersDarkMode)) {
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-    }
-  }, []);
-
-  // Update localStorage and apply theme class to the root element
-  useEffect(() => {
-    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-    document.documentElement.classList.toggle("dark", isDarkMode);
-  }, [isDarkMode]);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   const links = [
     {
-      title: "CosmoConverter",
-      href: "https://cosmo-converter.vercel.app/",
-      icon: <FaRocket className="w-8 h-8" />,
-      description: (
-        <span className="block md:inline">
-          Free & Fast Online File Converter!
-        </span>
-      ),
+      title: "Convertey - Online File Converter",
+      href: "#",
+      icon: <FaRocket className="w-6 h-6 md:w-7 md:h-7" />,
+      description: "Free & Fast Online File Converter!",
     },
     {
-      title: "Twitter",
-      href: "https://twitter.com/_CosmoCrafters_",
-      icon: <FaTwitter className="w-8 h-8" />,
-      description: "Follow us on Twitter/X!",
+      title: "Follow Minxfy's Twitter",
+      href: "https://twitter.com/Minxfy",
+      icon: <FaTwitter className="w-6 h-6 md:w-7 md:h-7" />,
+      description: "Check us on Twitter/X for latest news & updates",
     },
     {
-      title: "Email",
-      href: "mailto:official.cosmocrafters@gmail.com",
-      icon: <FaEnvelope className="w-8 h-8" />,
-      description: "Contact us via Email!",
+      title: "Send Us Email",
+      href: "mailto:minxfy@proton.me",
+      icon: <FaEnvelope className="w-6 h-6 md:w-7 md:h-7" />,
+      description: "Reach out to us through email",
     },
-  ];
+  ]
 
   return (
-    <main
-      className={`min-h-screen ${
-        isDarkMode ? "bg-black text-white" : "bg-white text-black"
-      } flex flex-col items-center justify-center p-4 md:p-6 relative`}
-    >
-      {/* Theme Toggle Button */}
-      <Button
-        onClick={toggleTheme}
-        className="fixed top-4 right-4 p-2 rounded-full bg-white/50 dark:bg-black/50 backdrop-blur-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-        aria-label="Toggle Theme"
-      >
-        {isDarkMode ? (
-          <FaSun className="w-5 h-5 text-yellow-500" />
-        ) : (
-          <FaMoon className="w-5 h-5 text-gray-700" />
-        )}
-      </Button>
+    <main className="h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-800 flex flex-col items-center justify-center p-4 md:p-6 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 md:top-20 md:left-20 w-48 h-48 md:w-72 md:h-72 rounded-full blur-3xl opacity-15 bg-minxfy-green animate-pulse"></div>
+        <div
+          className="absolute bottom-10 right-10 md:bottom-20 md:right-20 w-64 h-64 md:w-96 md:h-96 rounded-full blur-3xl opacity-15 bg-minxfy-green animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+      </div>
 
-      <div className="stars"></div>
-      <Card
-        className={`w-full max-w-2xl ${
-          isDarkMode
-            ? "bg-black/60 border-gray-700"
-            : "bg-white/60 border-gray-300"
-        } backdrop-blur-lg`}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="w-full max-w-2xl mx-auto"
       >
-        <div className="p-4 md:p-8 lg:p-10 space-y-4 md:space-y-8 lg:space-y-12">
-          <div className="text-center space-y-3 md:space-y-5 lg:space-y-6 mb-10 md:mb-8 lg:mb-10">
-            <motion.h1
-              className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent py-5 md:py-2 mb-2 md:mb-0 "
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              CosmoCrafters
-            </motion.h1>
-            <motion.p
-              className={`text-sm md:text-base ${
-                isDarkMode ? "text-gray-400" : "text-gray-600"
-              }`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              We are a group of recent software engineering graduates who are
-              interested in the AI & technology fields. Currently, we are
-              building web applications and tools mainly to enhance your
-              productivity and streamline your workflows, thus making your life
-              easier and convenient.
-            </motion.p>
-          </div>
-
-          <div className="space-y-6 md:space-y-8">
-            {links.map((link, index) => (
+        <Card className="backdrop-blur-xl border-0 shadow-2xl bg-slate-800/40 shadow-minxfy-green/10">
+          <div className="p-6 md:p-8 lg:p-12 space-y-8 md:space-y-10">
+            {/* Header Section */}
+            <div className="text-center space-y-4 md:space-y-6">
               <motion.div
-                key={link.href}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
+                className="flex justify-center items-center"
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <Button
-                  variant="outline"
-                  className={`w-full ${
-                    isDarkMode
-                      ? "bg-black/50 border-gray-700 hover:bg-gray-800 hover:border-gray-600"
-                      : "bg-white/50 border-gray-300 hover:bg-gray-200 hover:border-gray-400"
-                  } text-left flex items-center justify-between group py-10 px-4 md:py-8 md:px-5 lg:py-10 lg:px-6`}
-                  asChild
+                <h1
+                  className="text-4xl md:text-6xl lg:text-7xl font-bold text-minxfy-green leading-tight"
+                  style={{ fontFamily: "Ebrima, sans-serif", fontWeight: "bold" }}
                 >
-                  <a href={link.href} target="_blank" rel="noopener noreferrer">
-                    <div className="flex items-center space-x-4 md:space-x-6">
-                      {link.icon}
-                      <div>
-                        <div
-                          className={`font-semibold text-lg md:text-xl ${
-                            isDarkMode ? "text-white" : "text-black"
-                          }`}
-                        >
-                          {link.title}
+                  Minxfy
+                </h1>
+              </motion.div>
+
+              <motion.div
+                className="w-16 md:w-24 h-1 mx-auto rounded-full bg-minxfy-green"
+                initial={{ width: 0 }}
+                animate={{ width: "auto" }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              />
+
+              <motion.p
+                className="text-base md:text-lg leading-relaxed max-w-xl mx-auto text-slate-300 px-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                Previously known as CosmoCrafters. We are core developers of{" "}
+                <a
+                  href="https://github.com/Minxfy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-minxfy-green hover:text-minxfy-green-light transition-colors font-medium underline decoration-minxfy-green underline-offset-4"
+                >
+                  @Minxfy
+                </a>
+                , a modern, powerful, and user-friendly online file conversion tool.
+              </motion.p>
+            </div>
+
+            {/* Links Section */}
+            <div className="space-y-3 md:space-y-4">
+              {links.map((link, index) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
+                >
+                  <Button
+                    variant="outline"
+                    className="w-full group relative overflow-hidden border-0 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl bg-slate-700/50 hover:bg-slate-600/60 text-white hover:shadow-minxfy-green/20 backdrop-blur-sm rounded-2xl p-4 md:p-6 h-auto"
+                    asChild
+                  >
+                    <a href={link.href} target="_blank" rel="noopener noreferrer">
+                      {/* Hover gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-minxfy-green/10 to-minxfy-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+
+                      <div className="flex items-center justify-between relative z-10 w-full">
+                        <div className="flex items-center space-x-4 md:space-x-6 flex-1">
+                          <div className="p-2 md:p-3 rounded-xl transition-colors duration-300 bg-minxfy-green/20 text-minxfy-green group-hover:bg-minxfy-green/30 flex-shrink-0">
+                            {link.icon}
+                          </div>
+                          <div className="text-left flex-1 min-w-0">
+                            <div className="font-semibold text-lg md:text-xl mb-1 text-white group-hover:text-minxfy-green-light transition-colors duration-300">
+                              {link.title}
+                            </div>
+                            <div className="text-sm md:text-base text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
+                              {link.description}
+                            </div>
+                          </div>
                         </div>
-                        <div
-                          className={`text-sm md:text-md ${
-                            isDarkMode ? "text-gray-400" : "text-gray-600"
-                          }`}
-                        >
-                          {link.description}
+                        <div className="flex-shrink-0 ml-4">
+                          <FaExternalLinkAlt className="w-4 h-4 md:w-5 md:h-5 opacity-40 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1 text-minxfy-green" />
                         </div>
                       </div>
-                    </div>
-                    <FaExternalLinkAlt
-                      className={`w-4 h-4 md:w-6 md:h-6 ${
-                        isDarkMode ? "text-white" : "text-black"
-                      } opacity-0 group-hover:opacity-100 transition-opacity`}
-                    />
-                  </a>
-                </Button>
-              </motion.div>
-            ))}
+                    </a>
+                  </Button>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </motion.div>
     </main>
-  );
+  )
 }
