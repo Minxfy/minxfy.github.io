@@ -15,9 +15,9 @@ export default function Home() {
     },
     {
       title: "Follow Minxfy's Twitter",
-      href: "https://twitter.com/_CosmoCrafters_",
+      href: "https://twitter.com/Minxfy",
       icon: <FaTwitter className="w-5 h-5 sm:w-6 sm:h-6" />,
-      description: "Check us on Twitter/X for latest news & updates",
+      description: "Keep on track for latest news & updates",
     },
     {
       title: "Send Us Email",
@@ -43,7 +43,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-2xl mx-auto my-auto"
+        className="w-full max-w-2xl mx-auto mt-4 mb-2 sm:mt-8 sm:mb-4 md:mt-12 md:mb-6"
       >
         <Card className="backdrop-blur-xl border-0 shadow-2xl bg-slate-800/40 shadow-minxfy-green/10 mx-2 sm:mx-0">
           <div className="p-4 sm:p-6 md:p-8 lg:p-10 space-y-4 sm:space-y-6 md:space-y-8">
