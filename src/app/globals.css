@@ -1,65 +1,74 @@
+/* Import Google Fonts - DM Sans with variable weight and italic support */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+/* Import Tailwind CSS layers - order matters! */
+@tailwind base; /* Reset styles and basic element styling */
+@tailwind components; /* Reusable component classes */
+@tailwind utilities; /* Utility classes for quick styling */
+
+/* Universal box-sizing - makes width/height calculations predictable */
 * {
   box-sizing: border-box;
 }
 
+/* Base layout and typography setup */
 html,
 body {
-  height: 100%;
-  overflow-x: hidden;
+  height: 100%; /* Full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; /* Font stack with fallbacks for cross-platform compatibility */
 }
 
+/* Tailwind base layer - defines CSS custom properties (variables) */
 @layer base {
   :root {
-    /* Minxfy Brand Colors */
-    --minxfy-green: #a8e6cf;
-    --minxfy-green-light: #c8f2e0;
-    --minxfy-green-dark: #88d4ab;
-    --minxfy-teal: #2d5a4a;
-    --minxfy-teal-dark: #1a3329;
+    /* Custom brand colors for Minxfy - using descriptive names */
+    --minxfy-green: #a8e6cf; /* Primary brand green */
+    --minxfy-green-light: #c8f2e0; /* Lighter variation for backgrounds */
+    --minxfy-green-dark: #88d4ab; /* Darker variation for hover states */
+    --minxfy-teal: #2d5a4a; /* Complementary teal color */
+    --minxfy-teal-dark: #1a3329; /* Dark teal for high contrast */
 
-    /* Theme Variables */
-    --background: 15 23 42;
-    --foreground: 248 250 252;
-    --card: 30 41 59;
-    --card-foreground: 248 250 252;
-    --popover: 30 41 59;
-    --popover-foreground: 248 250 252;
-    --primary: 168 230 207;
-    --primary-foreground: 15 23 42;
-    --secondary: 51 65 85;
-    --secondary-foreground: 248 250 252;
-    --muted: 51 65 85;
-    --muted-foreground: 148 163 184;
-    --accent: 51 65 85;
-    --accent-foreground: 248 250 252;
-    --destructive: 239 68 68;
-    --destructive-foreground: 255 255 255;
-    --border: 51 65 85;
-    --input: 51 65 85;
-    --ring: 168 230 207;
-    --radius: 1rem;
+    /* Theme system variables - using RGB values for Tailwind compatibility */
+    /* Dark theme color scheme */
+    --background: 15 23 42; /* Dark blue-gray background */
+    --foreground: 248 250 252; /* Light text color */
+    --card: 30 41 59; /* Card background color */
+    --card-foreground: 248 250 252; /* Card text color */
+    --popover: 30 41 59; /* Popover background */
+    --popover-foreground: 248 250 252; /* Popover text */
+    --primary: 168 230 207; /* Primary action color (matches minxfy-green) */
+    --primary-foreground: 15 23 42; /* Text on primary background */
+    --secondary: 51 65 85; /* Secondary elements */
+    --secondary-foreground: 248 250 252; /* Text on secondary */
+    --muted: 51 65 85; /* Muted/disabled elements */
+    --muted-foreground: 148 163 184; /* Muted text */
+    --accent: 51 65 85; /* Accent elements */
+    --accent-foreground: 248 250 252; /* Text on accent */
+    --destructive: 239 68 68; /* Error/danger color (red) */
+    --destructive-foreground: 255 255 255; /* White text on destructive */
+    --border: 51 65 85; /* Border color */
+    --input: 51 65 85; /* Input field background */
+    --ring: 168 230 207; /* Focus ring color */
+    --radius: 1rem; /* Default border radius (16px) */
   }
 }
 
+/* Apply theme variables to base elements */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50; /* Default border and focus outline */
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground; /* Apply theme background and text colors */
   }
 }
 
+/* Custom utility classes - extends Tailwind's utility system */
 @layer utilities {
-  /* Minxfy Brand Colors */
+  /* Brand color text utilities - for consistent brand coloring */
   .text-minxfy-green {
     color: #a8e6cf;
   }
@@ -76,6 +85,7 @@ body {
     color: #1a3329;
   }
 
+  /* Brand color background utilities */
   .bg-minxfy-green {
     background-color: #a8e6cf;
   }
@@ -92,94 +102,103 @@ body {
     background-color: #1a3329;
   }
 
+  /* Brand color border utilities */
   .border-minxfy-green {
     border-color: #a8e6cf;
   }
   .decoration-minxfy-green {
-    text-decoration-color: #a8e6cf;
+    text-decoration-color: #a8e6cf; /* For underlines, overlines, etc. */
   }
 
-  /* Opacity Variations */
+  /* Opacity variations - for subtle backgrounds and overlays */
   .bg-minxfy-green\/5 {
-    background-color: rgba(168, 230, 207, 0.05);
+    background-color: rgba(168, 230, 207, 0.05); /* Very subtle tint */
   }
   .bg-minxfy-green\/10 {
-    background-color: rgba(168, 230, 207, 0.1);
+    background-color: rgba(168, 230, 207, 0.1); /* Light tint */
   }
   .bg-minxfy-green\/20 {
-    background-color: rgba(168, 230, 207, 0.2);
+    background-color: rgba(168, 230, 207, 0.2); /* Medium tint */
   }
   .bg-minxfy-green\/30 {
-    background-color: rgba(168, 230, 207, 0.3);
+    background-color: rgba(168, 230, 207, 0.3); /* Stronger tint */
   }
 
-  /* Shadow Effects */
+  /* Custom shadow effects with brand colors - for glowing effects */
   .shadow-minxfy-green\/10 {
-    box-shadow: 0 25px 50px -12px rgba(168, 230, 207, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(168, 230, 207, 0.1); /* Subtle glow */
   }
   .shadow-minxfy-green\/20 {
-    box-shadow: 0 25px 50px -12px rgba(168, 230, 207, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(168, 230, 207, 0.2); /* Stronger glow */
   }
 
-  /* Text Utilities */
+  /* Text clamping utility - truncates text after 2 lines */
   .line-clamp-2 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 2; /* Show only 2 lines, then ellipsis */
   }
 }
 
-/* Mobile Landscape Optimization */
+/* Responsive Design - Mobile landscape optimization */
+/* When screen is short and wide (mobile landscape) */
 @media screen and (max-height: 500px) and (orientation: landscape) {
+  /* Reduce vertical spacing to fit more content */
   .space-y-8 {
-    @apply space-y-3;
+    @apply space-y-3; /* 32px → 12px */
   }
   .space-y-6 {
-    @apply space-y-3;
+    @apply space-y-3; /* 24px → 12px */
   }
   .space-y-4 {
-    @apply space-y-2;
+    @apply space-y-2; /* 16px → 8px */
   }
+
+  /* Reduce padding to maximize content area */
   .p-10 {
-    @apply p-4;
+    @apply p-4; /* 40px → 16px */
   }
   .p-8 {
-    @apply p-4;
+    @apply p-4; /* 32px → 16px */
   }
   .p-6 {
-    @apply p-3;
+    @apply p-3; /* 24px → 12px */
   }
+
+  /* Scale down large text for mobile landscape */
   .text-7xl {
-    @apply text-3xl;
+    @apply text-3xl; /* ~72px → ~30px */
   }
   .text-6xl {
-    @apply text-3xl;
+    @apply text-3xl; /* ~60px → ~30px */
   }
   .text-5xl {
-    @apply text-2xl;
+    @apply text-2xl; /* ~48px → ~24px */
   }
 }
 
-/* Small Mobile Screens */
+/* Small mobile screens optimization */
 @media screen and (max-height: 600px) {
+  /* Moderate spacing reduction for taller mobile screens */
   .space-y-8 {
-    @apply space-y-4;
+    @apply space-y-4; /* 32px → 16px */
   }
   .space-y-6 {
-    @apply space-y-4;
+    @apply space-y-4; /* 24px → 16px */
   }
 }
 
-/* Very Small Screens */
+/* Very small screens (older phones) */
 @media screen and (max-width: 320px) {
+  /* Fine-tune for very narrow screens */
   .text-3xl {
-    @apply text-2xl;
+    @apply text-2xl; /* ~30px → ~24px */
   }
   .p-4 {
-    @apply p-3;
+    @apply p-3; /* 16px → 12px */
   }
   .gap-4 {
-    @apply gap-3;
+    @apply gap-3; /* 16px → 12px gap between flex/grid items */
   }
 }
