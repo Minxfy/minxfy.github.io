@@ -15,7 +15,7 @@ export default function Home() {
     },
     {
       title: "Follow Minxfy's Twitter",
-      href: "https://twitter.com/Minxfy",
+      href: "https://twitter.com/_CosmoCrafters_",
       icon: <FaTwitter className="w-5 h-5 sm:w-6 sm:h-6" />,
       description: "Check us on Twitter/X for latest news & updates",
     },
@@ -28,7 +28,7 @@ export default function Home() {
   ]
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-800 flex items-center justify-center p-3 sm:p-4 md:p-6 relative overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-800 flex justify-center relative overflow-hidden py-4 px-3 sm:py-6 sm:px-4 md:py-8 md:px-6">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-5 left-5 sm:top-10 sm:left-10 md:top-20 md:left-20 w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 rounded-full blur-3xl opacity-15 bg-minxfy-green animate-pulse" />
@@ -43,12 +43,12 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-2xl mx-auto"
+        className="w-full max-w-2xl mx-auto my-auto"
       >
         <Card className="backdrop-blur-xl border-0 shadow-2xl bg-slate-800/40 shadow-minxfy-green/10 mx-2 sm:mx-0">
-          <div className="p-4 sm:p-6 md:p-8 lg:p-10 space-y-6 sm:space-y-8">
+          <div className="p-4 sm:p-6 md:p-8 lg:p-10 space-y-4 sm:space-y-6 md:space-y-8">
             {/* Header Section */}
-            <header className="text-center space-y-3 sm:space-y-4 md:space-y-6">
+            <header className="text-center space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
