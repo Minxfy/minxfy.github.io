@@ -77,12 +77,12 @@ export default function Home() {
               >
                 Previously known as CosmoCrafters. We are core developers of{" "}
                 <a
-                  href="https://github.com/Minxfy"
+                  href="https://github.com/Minxfy/convertey"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-minxfy-green hover:text-minxfy-green-light transition-colors font-medium underline decoration-minxfy-green underline-offset-4"
                 >
-                  @Minxfy
+                  @Convertey
                 </a>
                 , a modern, powerful, and user-friendly online file conversion tool.
               </motion.p>
