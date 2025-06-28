@@ -20,7 +20,7 @@ export default function Home() {
     },
     {
       title: "Follow Minxfy's Twitter",
-      href: "https://twitter.com/Minxfy",
+      href: "https://twitter.com/_Minxfy_",
       icon: <FaTwitter className="w-5 h-5 sm:w-6 sm:h-6" />,
       description: "Keep on track for latest news & updates",
     },
